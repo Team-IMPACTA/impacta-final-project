@@ -1,5 +1,5 @@
 {
-  "name": "impacta-final-project",
+  "name": "impacta-project-wegether",
   "version": "1.0.0",
   "description": "site to register events",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Team-IMPACTA/impacta-final-project.git"
   },
-  "author": "",
+  "author": "students",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Team-IMPACTA/impacta-final-project/issues"
@@ -19,5 +19,6 @@
   "keywords": [],
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "devDependencies": {}
 }
