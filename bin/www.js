@@ -51,8 +51,8 @@ function onError (error) {
     }
 
     let bind = typeof port === 'string'
-    ? 'Pipe' + port
-    : 'Port' + port;
+        ? 'Pipe' + port
+        : 'Port' + port;
 
 
 // handle specific listen errors with friendly messages
