@@ -1,0 +1,108 @@
+<%- include('./partials/head'); %>
+
+<%- include('./partials/header'); %>
+
+<div class="conteiner">
+    <div class="cadastro mb-4">
+        <h1 class="form-titulo">Criar um novo evento</h1>
+        <% if(typeof(errors) != 'undefined'){ %> 
+            <ul>
+                <% errors.forEach((error)=>{ %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= error.msg %> 
+                      </div>
+               <% }) %> 
+            </ul>
+        <% } %> 
+        <form class="form-horizontal formulario" action="/events/create" method="POST" enctype="multipart/form-data">
+            <div class="form-group row register">
+                <div class="col-sm-12">
+                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" value="<%= event.nome %>">
+                </div>
+                </div>
+                <div class="form-group row register">
+                <div class="col-sm-9">
+                    <label for="tema">Tema</label>
+                    <input type="text" class="input-cadastro" name="tema"  value="<%= event.tema %>">
+                </div>   
+                </div>
+    
+                <div class="form-group row register">
+                <div class="col-sm-9">
+                    <label for="descricao">Descrição do evento:</label>
+                    <textarea class="form-control" id="descricao" rows="3" cols="30" name="descricao"  value="<%= event.descricao %>"></textarea>
+                </div>   
+                </div>
+    
+                <div class="form-group row register"> 
+                <div class="col-sm-9">
+                    <label for="data_inicio">Data do início</label>
+                    <input type="date" class="input-cadastro" name="data_inicio"  value="<%= event.data_inicio %>">   
+                </div>
+                </div>
+                
+                <div class="form-group row register">
+                <div class="col-sm-9">
+                    <label for="data_fim">Data do término</label>
+                    <input type="date" class="input-cadastro" name="data_fim"  value="<%= event.data_fim %>">
+                </div>
+                </div>
+    
+                <div class="form-group row register">
+                    <div class="col-sm-9">
+                        <label for="hora_inicio">Horário do início</label>
+                        <input type="text" class="input-cadastro" name="hora_inicio"  value="<%= event.hora_inicio %>">
+                    </div>
+                    </div>
+    
+                    <div class="form-group row register">
+                        <div class="col-sm-9">
+                            <label for="hora_fim">Horário do término</label>
+                            <input type="text" class="input-cadastro" name="hora_fim"  value="<%= event.hora_fim %>">
+                        </div>
+                        </div>
+    
+            
+    
+                    <div class="form-group row register">
+                        <div class="col-sm-9">
+                                <label for="preco">Preço</label>
+                                <input type="text" class="input-cadastro" name="preco"  value="<%= event.preco %>">
+                        </div>
+                        </div>
+    
+                <div class="form-group row register">  
+                    <label for="inicio_vendas">Data de início das vendas</label>  
+                    <div class="col-sm-9">
+                        <input placeholder="Data início das vendas: XX/XX/XXXX"type="date" class="input-cadastro" name="inicio_vendas"  value="<%= event.inicio_vendas %>">
+                </div>
+                </div>  
+    
+                <div class="form-group row register"> 
+                    <label for="link_imagem">Imagem de divulgação</label>   
+                    <div class="col-sm-9">
+                        <input placeholder="Insira o link do banner do evento" type="file" class="input-cadastro" name="link_imagem"  value="<%= event.link_imagem %>">
+                </div>
+                </div>
+    
+                <div class="form-group row register">
+                    <label for="link_video">Vídeo de divulgação (Youtube)</label>
+                    <div class="col-sm-9">
+                        <input placeholder="Link do vídeo"type="text" class="input-cadastro" name="link_video" >
+                </div>   
+                </div>
+                
+                <div class="new-event-buttons">
+                    <button type="submit">Confirmar</button>
+                </div>
+            </form>
+
+            
+
+    </div>
+</div>
+    
+
+
+<%- include('./partials/footer'); %>

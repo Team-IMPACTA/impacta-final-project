@@ -1,0 +1,55 @@
+<%- include('./partials/head'); %>
+
+<body>
+  <%- include('./partials/header'); %>
+  <main>
+    <div class="container events-list">
+      <% eventList.forEach(function(event) { %>
+       
+        <div class="card card-events" style="width: 18rem;">
+          <img class="card-img-top" src="/img/<%= event.link_imagem %> " alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= event.nome %> </h5>
+            <p class="card-text">Tema: <%= event.tema %> </p>
+            <p class="card-text">Começa em: <%= event.data_inicio %></p>
+          </div>
+          <div class="card-body card-buttons">
+            <a href="/events/event/<%= event.id %> " class="btn btn-primary">Saiba mais</a>
+            <a href="/events/edit/<%= event.id %> " class="btn btn-secondary">Editar evento</a>
+            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-<%= event.id %>">Excluir evento</a>
+
+            <div class="modal fade" id="modal-delete-<%= event.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content delete">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Deseja realmente excluir esse evento ?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Evento: <%= event.nome %></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <form action="/events/delete/<%= event.id %> " method="post">
+                      <button class="submit btn btn-danger">Excluir</button>
+                   </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+  
+          </div>
+        </div>
+    <%  })%> 
+    </div>
+    
+    
+    
+  </main>
+  
+
+</body>
+<%- include('./partials/footer'); %>

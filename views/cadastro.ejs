@@ -1,0 +1,61 @@
+<%- include('./partials/head'); %>
+
+<%- include('./partials/header'); %>
+
+<div class="conteiner">
+    <div class="cadastro mb-4">
+        <h1 class="form-titulo">Cadastro</h1>
+        <% if (erros != null) { %>
+            <% erros.forEach(function(erro){ %>
+                <div class="alert alert-danger" role="alert">
+                    <%= erro.msg %> 
+                </div>
+            <% }) %>
+        <% } %>
+        <form class="form-horizontal formulario" action="/user/cadastro" method="POST">
+            <div class="form-group row">
+            <div class="col-sm-12">
+                <input placeholder="Nome completo..." type="text" class="form-control" name="nome" required>
+            </div>
+            </div>
+            <div class="form-group row">
+            <div class="col-sm-9">
+                <input placeholder="Email..."type="email" class="input-cadastro" name="email" required>
+            </div>   
+            </div>
+
+            <div class="form-group row"> 
+            <div class="col-sm-9">
+                <input placeholder="(99)99999-9999" type="text" class="input-cadastro" name="phone" required>   
+            </div>
+            </div>
+            
+            <div class="form-group row">
+                <div class="col-sm-9">
+                    <input placeholder="Nome da Empresa que trabalha" type="text" class="input-cadastro" name="empresa">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-9">
+                    <input placeholder="Cargo que exerce..."type="text" class="input-cadastro" name="cargo">
+                </div>
+            </div>
+
+            <div class="form-group row">    
+                <div class="col-sm-9">
+                    <input placeholder="Senha" type="password" class="input-cadastro" name="senha" required>
+                </div>    
+            </div>  
+            
+            <div class="form-group row"> 
+                <input  class="btn button continuar" type="submit" value="Confirmar">    
+            </div>
+            
+        </form>
+    </div>
+</div>
+    
+
+
+<%- include('./partials/footer'); %>

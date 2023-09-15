@@ -1,0 +1,32 @@
+<%- include('./partials/head'); %>
+
+<body>
+  <%- include('./partials/header'); %>
+  <main class="search-area">
+
+    
+    <form class="form-horizontal formulario form-pesquisa" action="/events/SearchResult" method="GET">
+        <div class="form-group row">
+            <div class="col-sm-12">
+                <input placeholder="Encontre seu evento aqui..." type="text" class="form-control search-input" name="key">
+            </div>
+        </div>
+        <button class="search-button" type="submit">Buscar</button>
+    </form>
+
+    <% if(typeof(errors) != 'undefined'){ %> 
+      <ul>
+          <% errors.forEach((error)=>{ %>
+              <div class="alert alert-danger" role="alert">
+                  <%= error.msg %> 
+                </div>
+         <% }) %> 
+      </ul>
+  <% } %> 
+  
+    
+  </main>
+  
+
+</body>
+<%- include('./partials/footer'); %>

@@ -1,0 +1,58 @@
+<%- include('./partials/head'); %>
+<%- include('./partials/header'); %>
+<div class="container">
+    <!-- Outer Row -->
+    <div class="row justify-content-center">
+
+        <div class="col-xl-8 col-lg-8 col-md-9">
+
+            <div class="card o-hidden border-0 my-5">
+                <div class="card-body p-0">
+                    <!-- Nested Row within Card Body -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="p-5">
+                                <div class="text-center">
+                                    <h1 class="h1 text-gray-900 mb-4 title-login">Login do usuário</h1>
+                                </div>
+                                <% if (erros != null) { %>
+                                    <% erros.forEach(function(erro){ %>
+                                        <div class="alert alert-danger" role="alert">
+                                            <%= erro.msg %> 
+                                        </div>
+                                    <% }) %>
+                                <% } %>
+                                <form class="user" action="/auth/login" method="POST" enctype="application/x-www-form-urlencoded">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-control-user login"
+                                            id="email" name="email" aria-describedby="emailHelp"
+                                            placeholder="e-mail" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control form-control-user login"
+                                            id="password" name="password" placeholder="senha" required>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <input  class="btn continuar" type="submit" value="Continuar">
+                                    </div>
+                                </form>
+                                
+                                <hr>
+                                <div class="text-center">
+                                    <p class="texto-cadastro">Ainda não tem cadastro? <a href="/user/cadastro">Cadastre-se!</a></p> 
+                                </div>
+                                <div class="text-center">
+                                    <p class="texto-cadastro"><a href="/dados-pessoais">Esqueceu a senha?</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<%- include('./partials/footer'); %>

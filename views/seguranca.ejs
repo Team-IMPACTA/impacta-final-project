@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head'); %>
+  <body>
+    <%- include('./partials/header'); %>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <%- include('./partials/menu.ejs') %>
+        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
+          <div class="card">
+              <div class="card-body">
+                  <h1 class="card-title dashboard-title mb-4">Segurança</h1>
+                  <div class="tab-pane" id="settings">
+                    <form class="form-horizontal formulario">
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <input type="password" class="form-control" id="senha_atual" name="senha_atual" placeholder="Digite senha atual...">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <input type="password" class="form-control" id="nova_senha" name="nova_senha" placeholder="Digite sua nova senha...">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <input type="password" class="form-control" id="nova_senha_confirmacao" name="nova_senha_confirmacao" placeholder="Confime sua nova senha...">
+                        </div>
+                      </div>
+                      <button class="save-pass" type="submit">Salvar Alterações</button>
+                    </form>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+
+  <%- include('./partials/footer'); %>
+</html>

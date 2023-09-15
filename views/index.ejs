@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head'); %>
+  <body>
+    <%- include('./partials/header'); %>
+    <main>
+      <div class="part-1">
+        <div class="container-1 container">
+          <h1>Somos uma Plataforma para Eventos Online</h1>
+          <p>A magia dos grandes eventos agora acontece também no mundo digital: esteja mais conectado do que nunca com pessoas e empresas chave para o seu desenvolvimento e de seu negócio, esteja conectado com infinitas possibilidade de aprendizado, troca de experiências e oportunidades. </p>
+          <div class="buttons">
+            <button class="button-hospedar"><a href="/events/create">Hospedar um evento</a></button>
+            <button class="button-acessar"><a href="/events/list">Acessar um evento</a></button>
+          </div>
+        </div>
+        <div class="container-2 container">
+          <img src="img/banner-home.png">
+        </div>
+  
+      </div>
+
+      <div class="part-2">
+        <h2>Fique por dentro dos Próximos Eventos</h2>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/ccxp-worlds.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/dc-fandome.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="img/ted.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="part-3 mb-4">
+        <h3>Hospede seu Evento</h3>
+        <p>Conheça mais sobre como prodemos te ajudar a potencializar o alcance de seu evento e torná-lo desde já um sucesso.</p>
+        <button class="button-especialista">Fale com um especialista</button>
+      </div>
+      
+    </main>
+  </body>
+  <%- include('./partials/footer'); %>
+</html>

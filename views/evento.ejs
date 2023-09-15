@@ -1,0 +1,60 @@
+<%- include('./partials/head'); %>
+
+<%- include('./partials/header'); %>
+
+<div class="container event-show">
+   
+    <h1><%= evento.nome %> </h1>
+
+    <img src="/img/<%= evento.link_imagem %> " width="1080px" height="500px">
+
+    <h2>Tema: <%= evento.tema %> </h2>
+
+    <p><%= evento.descricao %> </p>
+
+    <p>O evento <%= evento.nome %>  acontece no dia  <%= evento.data_inicio %> às <%= evento.hora_inicio %>h </p>
+
+    <p>Ele se encerra no dia <%= evento.data_fim %> às <%= evento.hora_fim %>h </p>
+
+    <p>Preço: R$ <%= evento.preco %>,00 </p>
+
+    <h1>Veja um pouco das atrações que te aguardam!</h1>
+
+
+    <iframe width="800" height="400" src="https://www.youtube.com/embed/<%= evento.link_video %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <div class="event-button">
+        <a href="#" data-toggle="modal" data-target="#modal-inscrever-<%= evento.id %> " class="btn btn-primary">Inscrever-se</a>
+        <a href="/events/list" class="btn btn-primary">Voltar</a>
+    </div>
+
+    <div class="modal fade" id="modal-inscrever-<%= evento.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content delete">
+            <div class="modal-header">
+              <h5 class="modal-title">Confirma a inscrição no evento?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p><%= evento.nome %></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <a href="/events/subscribe/<%= evento.id %>" class="btn btn-success">Confirmar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+
+
+
+</div>
+    
+
+
+<%- include('./partials/footer'); %>

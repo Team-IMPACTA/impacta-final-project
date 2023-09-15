@@ -1,0 +1,50 @@
+<%- include('./partials/head'); %>
+
+<%- include('./partials/header'); %>
+
+<div class="main-cadastro">
+    
+    <%- include('./partials/menu.ejs')  %> 
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                <div class="form-dados-pessoais">
+                    <h1 class="form-titulo">Dados Pessoais</h1>
+                    <form class="form-cadastro" action="">
+                        
+                        <div class="input-cadastro">
+                            <label for="nome-completo" class="label-cadastro">Nome Completo:</label>
+                            <input type="text" class="input-cadastro" name="nome-completo">
+                        </div>
+                        <div class="input-cadastro">
+                            <label for="email" class="label-cadastro">Email:</label>
+                            <input type="email" class="input-cadastro" name="email">
+                        </div>
+                            
+                        <div class="input-cadastro">
+                            <label for="telefone" class="label-cadastro">Telefone:</label>
+                            <input type="text" class="input-cadastro" name="telefone">   
+                        </div>
+
+                        <div class="input-cadastro">
+                            <label for="empresa" class="label-cadastro">Empresa:</label>
+                            <input type="text" class="input-cadastro" name="empresa">
+                        </div>
+                        
+                        <div class="input-cadastro">
+                            <label for="cargo" class="label-cadastro">Cargo:</label>
+                            <input type="text" class="input-cadastro" name="cargo">
+                        </div>
+                        
+                        
+                    </form>
+                    <button type="submit">Confirmar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer'); %>

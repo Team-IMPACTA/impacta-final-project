@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light header justify-content-center">
+    <a class="navbar-brand" href="#">
+      <img src="/img/Logo-weGether.jpg" alt="" class="logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav mr-auto ">
+        <li class="nav-item text-center header-a">
+          <a class="nav-link header-itens" href="/">Home</a>
+        </li>
+        <li class="nav-item text-center">
+          <a class="nav-link header-itens" href="/events/list">Acessar Eventos</a>
+        </li>
+        <li class="nav-item text-center">
+          <a class="nav-link header-itens" href="/events/search">Buscar eventos</a>
+        </li>
+        <li class="nav-item text-center">
+            <a class="nav-link header-itens" href="/quem-somos">Quem Somos</a>
+          </li>
+      </ul>
+      <ul class="navbar-nav ml-auto header-buttons">
+          <li class="nav-item text-center">
+            <a class="nav-link btn home-button" href="/user/cadastro">Inscreva-se</a>
+          </li>
+          <% if(userSession) { %>
+          <li class="nav-item text-center">
+            <div class="btn-group">
+              <button type="button" class="btn dropdown-toggle home-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <%= userSession.nome %>
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item " href="/auth/logout">Sair</a>
+              </div>
+            </div>
+          </li>
+          <% }else{ %>
+          <li class="nav-item text-center">
+            <a class="nav-link btn home-button" href="/auth/login">Login</a>
+          </li>
+          <% } %>
+      </ul>
+    </div>
+  </nav>
